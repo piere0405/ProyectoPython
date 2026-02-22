@@ -143,8 +143,8 @@ elif menu == "Ejercicio 4" :
             "Presupuesto": [self.presupuesto],
             "Gasto real": [self.gasto_real]
         }
-        dff = pd.DataFrame(info)
-        st.dataframe(dff)
+        return pd.DataFrame(info)
+        
    
     nombre1 = st.text_input("NOMBRE DE LA ACTIVIDAD")
     tipo1 = st.selectbox("TIPO DE ACTIVIDAD", ["INVERSION", "GASTOS PERSONALES", "AHORRO"])
@@ -155,7 +155,7 @@ elif menu == "Ejercicio 4" :
     if st.button("CREAR ACTIVIDAD"):
         actividad = Actividad(nombre1, tipo1, presupuesto1, gasto1)
 
-        st.write(actividad.mostrar_info())
+        st.dataframe(actividad.mostrar_info())
 
         if actividad.esta_en_presupuesto():
             st.success("DENTRO DEL PRESUPUESTO ")
