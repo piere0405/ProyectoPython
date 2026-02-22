@@ -31,7 +31,7 @@ if menu == "Home" :
         </p>
 
         <p><b>Tecnologías utilizadas:</b><br>
-        Python, Streamlit, NumPy, Pandas
+        Python, Streamlit, Pandas
         </p>
 
         </div>
