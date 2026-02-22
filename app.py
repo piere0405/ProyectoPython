@@ -136,13 +136,15 @@ elif menu == "Ejercicio 4" :
                 return True
 
       def mostrar_info(self):
-            return f"""
-            Actividad: {self.nombre}
-            Tipo: {self.tipo}
-            Presupuesto: {self.presupuesto}
-            Gasto real: {self.gasto_real}
-            """
-
+            
+        info = {
+            "Actividad": [self.nombre],
+            "Tipo": [self.tipo],
+            "Presupuesto": [self.presupuesto],
+            "Gasto real": [self.gasto_real]
+        }
+        dff = pd.DataFrame(info)
+        st.dataframe(dff)
    
     nombre1 = st.text_input("NOMBRE DE LA ACTIVIDAD")
     tipo1 = st.selectbox("TIPO DE ACTIVIDAD", ["INVERSION", "GASTOS PERSONALES", "AHORRO"])
